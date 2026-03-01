@@ -13,4 +13,4 @@ jobs:
       run: echo "Hello bhai"
 
     - name: say hello to username
-      run: echo ${{github.actor}}
+      run: echo "hello $USER"
