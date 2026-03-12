@@ -1,17 +1,17 @@
-name: Hello
+name: hello
 
 on:
   push:
-   branches: [main]
+    branches: [main]
+
 
 jobs:
   greet:
-   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-   steps:
-    - name: say hello to users
-      run: echo "Hello bhai"
+    steps:
+       - name: Checkout code
+         uses: actions/checkout@v6
 
-    - name: say hello to username
-      run: echo "hello $USER"
-
+       - name: Show files
+         run: ls -la
