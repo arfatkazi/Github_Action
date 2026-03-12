@@ -27,3 +27,7 @@ jobs:
        - name: Run only on main
          if: github.ref == 'refs/heads/main' 
          run: echo "This is main branch"
+
+       - name: Run only when manually triggered
+         if: github.event_name == 'workflow_dispatch'
+         run: echo "Manual run detected"
