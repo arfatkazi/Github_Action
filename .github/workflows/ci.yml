@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  APP_NAME: github-actions-practice
+
+jobs:
+  basics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: show workflow info
+        run: | 
+          echo " Workflow: ${{ github.workflow }}
+          echo " github event: ${{ github.event_name }}
+          echo " github ref: ${{ github.ref }}
+          echo " Actor: ${{ github.actor }}
+          echo " APP NAME: ${{ env.APP_NAME }}
+
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+
+      - name: list repository files
+        run: ls -la
+
+      - name: print current file
+        run: pwd
+
+      - name:  Run only on main branch
+        if: github.ref == 'refs/heads/main'
+        run: echo "Running on main branch"
+
+      
+        
+
+
+  
