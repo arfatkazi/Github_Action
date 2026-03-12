@@ -1,0 +1,35 @@
+name: NODE CI
+
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+job:
+  nodeci:
+    name: NODE ci
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Node setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+     - name: Install dependencies
+       run: npm ci
+
+    - name: Run tests
+      run: npm test
+
+
+
+
+          
+      
+        
