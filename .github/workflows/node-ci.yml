@@ -7,8 +7,8 @@ on:
     branches: [ main ]
       
   workflow_dispatch:
-job:
-  nodeci:
+jobs:
+  test-node:
     name: NODE ci
     runs-on: ubuntu-latest
     steps:
