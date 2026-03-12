@@ -3,6 +3,7 @@ name: hello
 on:
   push:
     branches: [main]
+  workflow_dispatch: 
 
 env:
     APP: demo
