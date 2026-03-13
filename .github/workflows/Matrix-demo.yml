@@ -1,0 +1,31 @@
+name: Matrix-Demo
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: 
+
+jobs:
+  test:
+    name: Matrix-demo
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20,21,22,23,24,25]
+        os: [ubuntu-latest]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Show version under test
+        run: node --version
+      
+
+        
