@@ -1,0 +1,11 @@
+{
+  "name": "github-action-node-ci-demo",
+  "version": "1.0.0",
+  "description": "Dummy Node project for GitHub Actions CI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Tests passed\""
+  },
+  "author": "Arfat Kazi",
+  "license": "MIT"
+}
