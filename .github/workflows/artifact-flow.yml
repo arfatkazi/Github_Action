@@ -33,7 +33,7 @@ jobs:
           path: downloaded/
 
       - name: verify content
-        run: cat downloaded/app.txt
+        run: cat downloaded/app.txt 
 
 
 
