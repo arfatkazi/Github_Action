@@ -1,4 +1,4 @@
-name: Node CI
+name: Node CI pipeline
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    name: Node ci
+    name: Node CI pipeline
     runs-on: ubuntu-latest
     steps:
      - name: Checkout code
