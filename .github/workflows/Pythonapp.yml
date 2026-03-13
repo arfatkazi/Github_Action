@@ -5,7 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-  workflow_dispatch: 
+ 
 
 jobs:
   test:
@@ -20,7 +20,7 @@ jobs:
         python-version: "3.11"
     - name: Install dependencies
       run: |
-        python -m pip install 
+        python -m pip install --upgrade zip
         pip install -r requirements.txt
 
     - name: Run tests
