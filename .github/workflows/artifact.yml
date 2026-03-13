@@ -1,0 +1,31 @@
+name: BUILD AND SAVE ARTIFACT
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
+      
+    - name: Create build folder
+      run: |
+        mkdir dist
+        echo "hello arfat" > dist/output.txt
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-files
+        path: dist/
+
+      
+  
