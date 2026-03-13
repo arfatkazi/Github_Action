@@ -1,0 +1,26 @@
+name: Python-app
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: 
+
+jobs:
+  test:
+    name: python-app
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v5
+    - name: Setup python
+      uses: actions/setup-python@v4
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade zip
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: pytest
+    
