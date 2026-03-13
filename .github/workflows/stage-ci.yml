@@ -24,7 +24,7 @@ jobs:
 
       - name: build app
         run: |
-          mkdir test
+          mkdir -p dist
           echo "completed app" > dist/app.txt
 
       - name: upload artifact
